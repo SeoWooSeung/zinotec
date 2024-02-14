@@ -6,6 +6,41 @@
     --light-gray: #dddddd;
 }
 
+.tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+
+    opacity: 0;
+}
+
+.tit span {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 80px 0;
+
+    opacity: 0;
+}
+
+.section.active .tit span {
+    opacity: 1;
+    transition: 1.8s 1.4s;
+}
+
+.section.active .tit h2 {
+    font-size: 48px;
+    opacity: 1;
+    transition: 1s 0.5s;
+}
+
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 
 #header {
     position: fixed;
@@ -14,19 +49,15 @@
     right: 0;
     z-index: 999;
 
-    /* background: rgba(0, 0, 0, 0.2); */
+    background: rgba(0, 0, 0, 0.1);
     transition: top 0.5s;
-}
-
-#header.on {
-    top: -100px;
 }
 
 #header .header_wrap {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 15px;
-    height: 100px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,7 +154,7 @@
     content: "";
     position: absolute;
     inset: 0 0 0 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .main_visual .itm01 {
@@ -171,6 +202,7 @@
     padding: 18px 10px;
     border: 1px solid var(--white-color);
     border-radius: 20px;
+    text-align: center;
 }
 
 .C_scroll i {
@@ -288,17 +320,21 @@
 
 /*main_content*/
 
+.main_content {
+    background: var(--white-color);
+}
+
 .main_content.fp-table {
     justify-content: flex-start;
-    padding: 80px 0;
+    padding: 120px 0;
     text-align: center;
 }
 
 .main_content h2 {
     font-size: 40px;
     font-weight: 700;
-    opacity: 0;
     margin: 0 0 16px 0;
+    opacity: 0;
 }
 
 .main_content.active h2 {
@@ -307,14 +343,159 @@
     transition: 1s 0.5s;
 }
 
-.main_content span {
+.main_content  span {
+    display: block;
+    position: relative;
     font-size: 18px;
     font-weight: 700;
+    margin: 0 0 80px 0;
+    
     opacity: 0;
 }
 
 .main_content.active span {
-    opacity: 1;
     font-size: 18px;
-    transition: 1.8s 1.7s;
+    opacity: 1;
+    transition: 1.8s 1.4s;
 }
+
+.main_content span::after {
+    content: "";
+    position: absolute;
+    bottom:-150%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30px;
+    height: 1px;
+    background: #333;
+}
+
+.main_content .inner {
+display: flex;
+gap: 30px;
+}
+
+.main_content .inner>* {
+    flex: 1;
+}
+
+.main_content .inner .img_box {
+padding: 50px;
+background: #f9f9f9;
+border-radius: 5px;
+}
+
+.main_content .inner .img_box figure img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 0 16px 0;
+}
+
+.main_content .inner .img_box strong {
+    display: block;
+font-size: 24px;
+font-weight: 600;
+margin: 0 0 8px 0;
+}
+
+.main_content .inner .img_box p {
+word-break: keep-all;
+line-height: 1.4;
+}
+
+/* main_banner */
+
+.main_banner.fp-table {
+    justify-content: flex-start;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.main_banner {
+    padding: 120px 0;
+}
+
+/* 첫번째 banner */
+
+.main_banner .inner .main_box {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 60px;
+}
+
+.main_banner .inner .main_box>* {
+   flex: 1;
+}
+
+.main_banner .inner .main_box .lt_box {
+padding: 60px 0;
+}
+
+.main_banner .inner .main_box .rt_box {
+    padding: 120px 0;
+    text-align: left;
+}
+
+.main_banner .inner .main_box .rt_box strong {
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+}
+
+.main_banner .inner .main_box .rt_box p {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/* .main_banner hr {
+    position: relative;
+} */
+
+.main_banner hr::after{
+content: "";
+position: absolute;
+bottom: 415px;
+left: 50%;
+transform: translate(-50%,0);
+width: 30px;
+height: 30px;
+background: #d9d9d9;
+border-radius: 50%;
+color: #ffffff;
+}
+
+/* 두번째 banner */
+
+.main_banner .inner .S_main_box {
+    display: flex;
+    gap: 60px;
+    margin: 0 0 40px 0;
+}
+
+.main_banner .inner .S_main_box>* {
+    flex: 1 ;
+}
+
+.main_banner .inner .S_main_box .rt_box {
+    padding: 60px 0 ;
+}
+
+.main_banner .inner .S_main_box .lf_box {
+    padding: 120px 0;
+    text-align: right;
+}
+
+.main_banner .inner .S_main_box .lf_box strong {
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+}
+
+.main_banner .inner .S_main_box .lf_box p {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
