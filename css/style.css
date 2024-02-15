@@ -1,9 +1,15 @@
 :root {
-    --primary-color: #ca705b;
+    --primary-color: #3e7bfa;
     --secondary-color: #d97a3a;
     --white-color: #ffffff;
     --dark-gray: #333333;
     --light-gray: #dddddd;
+}
+
+.section.fp-table {
+    justify-content: flex-start;
+    padding: 120px 0;
+    text-align: center;
 }
 
 .tit h2 {
@@ -33,13 +39,11 @@
     transition: 1s 0.5s;
 }
 
-
 .inner {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
-
 
 #header {
     position: fixed;
@@ -48,8 +52,14 @@
     right: 0;
     z-index: 999;
 
+    /* background: rgba(0, 0, 0, 0.0); */
+    /* transition: top 0.5s; */
+}
+
+#header.on {
     background: rgba(0, 0, 0, 0.1);
-    transition: top 0.5s;
+    top: -100px;
+    color: #333;
 }
 
 #header .header_wrap {
@@ -185,8 +195,9 @@
     color: var(--white-color);
 }
 
-.main_visual .main_visual_slide .itm .slogan span {
-    font-size: 18px;
+.main_visual .main_visual_slide .itm .slogan p {
+    font-size: 16px;
+    line-height: 1.4;
     color: var(--white-color);
 }
 
@@ -342,12 +353,12 @@
     transition: 1s 0.5s;
 }
 
-.main_content  span {
+.main_content span {
     display: block;
     position: relative;
     font-size: 18px;
     margin: 0 0 80px 0;
-color: #888;    
+    color: #666;
     opacity: 0;
 }
 
@@ -360,17 +371,17 @@ color: #888;
 .main_content span::after {
     content: "";
     position: absolute;
-    bottom:-150%;
+    bottom: -150%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 30px;
     height: 1px;
     background: #333;
 }
 
 .main_content .inner {
-display: flex;
-gap: 30px;
+    display: flex;
+    gap: 30px;
 }
 
 .main_content .inner>* {
@@ -378,31 +389,37 @@ gap: 30px;
 }
 
 .main_content .inner .img_box {
-padding: 50px;
-background: #f9f9f9;
-border-radius: 5px;
+    padding: 50px 0;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .main_content .inner .img_box figure img {
-    width: 100%;
-    height: 300px;
+    width: auto;
+    height: 250px;
     object-fit: cover;
     margin: 0 0 16px 0;
 }
 
+.main_content .inner .img_box .txt_box {
+    padding: 0 50px;
+}
+
 .main_content .inner .img_box strong {
     display: block;
-font-size: 24px;
-font-weight: 600;
-margin: 0 0 8px 0;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
 }
 
 .main_content .inner .img_box p {
-word-break: keep-all;
-line-height: 1.4;
+    word-break: keep-all;
+    line-height: 1.4;
+    color: #666;
 }
 
-/* main_banner */
+/* 3번째 페이지*/
 
 .main_banner.fp-table {
     justify-content: flex-start;
@@ -415,19 +432,47 @@ line-height: 1.4;
 }
 
 /* 첫번째 banner */
+.main_banner .main_box {
+    opacity: 0;
+    transform: scale(1.5);
+}
+
+.main_banner.active .main_box {
+    opacity: 1;
+    transition: 0.6s 0.6s;
+    transform: scale(1);
+
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.main_banner .S_main_box {
+    opacity: 0;
+    transform: scale(1.5);
+}
+
+.main_banner.active .S_main_box {
+    opacity: 1;
+    transition: 0.6s 0.6s;
+    transform: scale(1);
+}
 
 .main_banner .inner .main_box {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 60px;
+
 }
 
 .main_banner .inner .main_box>* {
-   flex: 1;
+    flex: 1;
 }
 
 .main_banner .inner .main_box .lt_box {
-padding: 60px 0;
+    padding: 60px 0;
+}
+
+.main_banner .inner .main_box .lf_box img {
+    border: 3px solid #007cba;
 }
 
 .main_banner .inner .main_box .rt_box {
@@ -438,30 +483,37 @@ padding: 60px 0;
 .main_banner .inner .main_box .rt_box strong {
     display: block;
     font-size: 32px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0 0 16px 0;
 }
 
 .main_banner .inner .main_box .rt_box p {
     font-size: 18px;
     line-height: 1.4;
+    color: #666;
 }
 
-/* .main_banner hr {
-    position: relative;
-} */
+/* hr */
 
-.main_banner hr::after{
-content: "";
-position: absolute;
-bottom: 415px;
-left: 50%;
-transform: translate(-50%,0);
-width: 30px;
-height: 30px;
-background: #d9d9d9;
-border-radius: 50%;
-color: #ffffff;
+.main_banner hr {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.main_banner hr::after {
+    content: "\e9c5";
+    font-family: xeicon;
+    padding: 5px 0 0 5px;
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 450px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 25px;
+    height: 25px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    color: #000;
 }
 
 /* 두번째 banner */
@@ -473,27 +525,205 @@ color: #ffffff;
 }
 
 .main_banner .inner .S_main_box>* {
-    flex: 1 ;
+    flex: 1;
 }
 
 .main_banner .inner .S_main_box .rt_box {
-    padding: 60px 0 ;
+    padding: 60px 0;
+}
+
+.main_banner .inner .S_main_box .rt_box img {
+    border: 4px solid #007cba;
 }
 
 .main_banner .inner .S_main_box .lf_box {
-    padding: 120px 0;
+    padding: 150px 0;
     text-align: right;
 }
 
 .main_banner .inner .S_main_box .lf_box strong {
     display: block;
     font-size: 32px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0 0 16px 0;
 }
 
 .main_banner .inner .S_main_box .lf_box p {
     font-size: 18px;
     line-height: 1.4;
+    color: #666;
 }
 
+/* 4번째 페이지 */
+
+.main_bg.fp-table {
+    justify-content: flex-start;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.main_bg .tit h2 {
+    display: block;
+    margin: 0 0 80px 0;
+}
+
+.main_bg .inner ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 30px;
+
+    opacity: 0;
+}
+
+.main_bg.active .inner ul {
+    opacity: 1;
+    transition: 0.8s 0.8s;
+}
+
+.main_bg .inner ul li img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #007cba;
+}
+
+.main_bg .inner ul .txt {
+    padding: 80px;
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    background: #f9f9f9;
+    color: #000;
+}
+
+.main_bg .inner ul .txt .txt_area {
+    width: 200px;
+    height: 120px;
+    text-align: center;
+}
+
+.main_bg .inner ul .txt strong {
+    position: relative;
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 34px 0;
+}
+
+.main_bg .inner ul .txt strong::after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 20px;
+    height: 2px;
+    background: #007cba;
+}
+
+.main_bg .inner ul .txt p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #666;
+}
+
+/*  */
+
+.xsxs {
+    padding: 120px 0;
+    overflow: hidden;
+}
+
+.xsxs .list {
+    display: grid;
+    grid-auto-rows: minmax(350px, auto);
+    gap: 10px;
+    width: 1200px;
+    margin: 0 auto;
+
+}
+
+
+@keyframes slide01 {
+    from {
+        transform: translateX(-100%);
+        /* 왼쪽 밖으로 이동 */
+    }
+
+    to {
+        transform: translateX(0);
+        /* 원래 위치로 이동 */
+    }
+}
+
+.xsxs .list li {
+    border-radius: 20px;
+}
+
+.xsxs .list li:nth-child(1) {
+    background: url(../images/data1.png)no-repeat center center/cover;
+    grid-row: 1 / 3;
+    transform: translateX(-50%);
+
+    opacity: 0;
+}
+
+.xsxs.on .list li:nth-child(1) {
+    transform: translateX(0);
+    transition: 0.6s;
+
+    opacity: 1;
+}
+
+.xsxs .list li:nth-child(2) {
+    background: url(../images/data2.jpg)no-repeat center center/cover;
+    grid-column: 2 / 4;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.xsxs.on .list li:nth-child(2) {
+    transform: translateY(0);
+    transition: 0.7s;
+    opacity: 1;
+}
+
+.xsxs .list li:nth-child(3) {
+    background: url(../images/data3-1.jpg)no-repeat center center/cover;
+    grid-column: 4 / 5;
+    transform: translateX(50%);
+    opacity: 0;
+}
+
+.xsxs.on .list li:nth-child(3) {
+    transform: translateX(0);
+    transition: 0.8s;
+    opacity: 1;
+}
+
+.xsxs .list li:nth-child(4) {
+    background: url(../images/data4.jpg)no-repeat center center/cover;
+    grid-column: 2 / 3;
+    transform: translateY(50%);
+    opacity: 0;
+}
+
+.xsxs.on .list li:nth-child(4) {
+    transform: translateY(0);
+    transition: 0.9s;
+    opacity: 1;
+}
+
+.xsxs .list li:nth-child(5) {
+    background: url(../images/data5-1.jpg)no-repeat center center/cover;
+    grid-column: 3 / 5;
+    transform: translateX(50%);
+    opacity: 0;
+}
+
+.xsxs.on .list li:nth-child(5) {
+    transform: translateX(0);
+    transition: 1s;
+    opacity: 1;
+}

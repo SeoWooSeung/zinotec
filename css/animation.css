@@ -1,0 +1,16 @@
+@keyframes animationName {
+
+    /* 애니메이션의 시작 상태 */
+    from {
+        /* 시작 상태에 대한 속성들 */
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    /* 애니메이션의 끝 상태 */
+    to {
+        /* 끝 상태에 대한 속성들 */
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

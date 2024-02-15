@@ -5,15 +5,23 @@ $(function () {
     navigation: true,
     onLeave: function (index, nextIndex, direction) {
       console.log(index, nextIndex, direction);
-      //   $(".gnb li").removeClass("on");
-      //   $(".gnb li")
-      //     .eq(nextIndex - 1)
-      //     .addClass("on");
 
+      // $(".gnb li").removeClass("on");
+      // $(".gnb li")
+      //   .eq(nextIndex - 1)
+      //   .addClass("on");
+    },
+
+    afterLoad: function (origin, destination, direction, trigger) {
+      console.log(destination.index);
+      let n = destination.index;
       $(".section").removeClass("on");
-      $(".section")
-        .eq(nextIndex - 1)
-        .addClass("on");
+      $(".section").eq(n).addClass("on");
+      if (n > 0) {
+        $("#header").addClass("on");
+      } else {
+        $("#header").removeClass("on");
+      }
     },
   });
 

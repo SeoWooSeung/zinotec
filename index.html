@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="title" content="부산대학교">
-    <meta name="description" content="부산대학교">
+    <meta name="title" content="지노텍">
+    <meta name="description" content="지노텍">
 
     <title>지노텍</title>
 
@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="./css/fullpage.min.css">
     <link rel="stylesheet" href="./css/fullpage.min.css.map">
     <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="./css/style.css">
 
 
     <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="./js/slick.min.js"></script>
     <script src="./js/fullpage.min.js"></script>
     <script src="./js/custom.js" defer></script>
@@ -27,7 +29,7 @@
 
 <body>
     <div class="wrap">
-        <header id="header">
+        <header id="header" class="on">
             <div class="header_wrap">
                 <h1>
                     <a href="">
@@ -62,19 +64,20 @@
                         <div class="itm itm01">
                             <div class="slogan">
                                 <strong>지속적인 혁신과 변화를 추구하는 기업</strong>
-                                <span>지노텍은 친환경의 고기능성 코팅소재를 개발 및 생산하는 나노/세라믹 전문 기업입니다.</span>
+                                <p>zinnoSPACE™는 다이나믹한 협업으로 산업 현장에서 발생하는 문제의 빠른 해결을 지원하고 <br>
+                                    지식 콘텐츠를 축적하여 활용 할 수 있는 솔루션입니다.</p>
                             </div>
                         </div>
                         <div class="itm itm02">
                             <div class="slogan">
                                 <strong>우리 삶을 아름답게 하는 기업</strong>
-                                <span>지노텍은 친환경의 고기능성 코팅소재를 개발 및 생산하는 나노/세라믹 전문 기업입니다.</span>
+                                <p>zinnoSPACE™는 다이나믹한 협업에 특화된 솔루션입니다.</p>
                             </div>
                         </div>
                         <div class="itm itm03">
                             <div class="slogan">
                                 <strong>지노텍은 여러분의 삶과 함께 하고 있습니다.</strong>
-                                <span>지노텍은 친환경의 고기능성 코팅소재를 개발 및 생산하는 나노/세라믹 전문 기업입니다.</span>
+                                <p>다양한 분야에서 zinnoSPACE™를 경험해보세요</p>
                             </div>
                         </div>
                     </div>
@@ -101,44 +104,47 @@
                     <div class="img_box">
                         <figure>
                             <img src="./images/f_img01.jpg" alt="">
-                            <strong>숙련된 현장 작업자 부족</strong>
-                            <p>숙련된 현장 작업자의 부족으로
-                                이슈 발생 시, 다운타임이
-                                증대되고 많은 비용과 시간이
-                                소요되고 있습니다.
-                            </p>
+                            <div class="txt_box">
+                                <strong>숙련된 현장 작업자 부족</strong>
+                                <p>숙련된 현장 작업자의 부족으로
+                                    이슈 발생 시, 다운타임이
+                                    증대되고 많은 비용과 시간이
+                                    소요되고 있습니다.
+                                </p>
+                            </div>
                         </figure>
                     </div>
                     <div class="img_box">
                         <figure>
                             <img src="./images/f_img02.jpg" alt="">
-                            <strong>일회성 이슈 해결</strong>
-                            <p>실시간 화상회의로는 소통의 연속성을
-                                유지하기가 어렵습니다. 또한 이슈가 해결되어도
-                                관련 노하우의 축적이 이루어지지 않아
-                                같은 문제가 반복되며,
-                                비효율적인 업무 프로세스로 진행됩니다.
-                            </p>
+                            <div class="txt_box">
+                                <strong>일회성 이슈 해결</strong>
+                                <p>실시간 화상회의로는 소통의 연속성을
+                                    유지하기가 어렵습니다. 또한 이슈가 해결되어도
+                                    관련 노하우의 축적이 이루어지지 않아
+                                    같은 문제가 반복되며,
+                                    비효율적인 업무 프로세스로 진행됩니다.
+                                </p>
+                            </div>
                         </figure>
                     </div>
                     <div class="img_box">
                         <figure>
                             <img src="./images/f_img03.jpg" alt="">
-                            <strong>효과적인 협업 툴 부족</strong>
-                            <p>전화, 이메일, 문자 등을 통한 기존 협업
-                                방식은 소통을 파편화 시키고, 일반적인
-                                화상회의 툴로는 산업 현장의 복잡한
-                                이슈해결이 어렵습니다.
-                            </p>
+                            <div class="txt_box"> <strong>효과적인 협업 툴 부족</strong>
+                                <p>전화, 이메일, 문자 등을 통한 기존 협업
+                                    방식은 소통을 파편화 시키고, 일반적인
+                                    화상회의 툴로는 산업 현장의 복잡한
+                                    이슈해결이 어렵습니다.
+                                </p>
+                            </div>
                         </figure>
                     </div>
                 </div>
             </section>
+
             <section class="section main_banner">
-                <!-- <div class="tit">
-                    <h2>Construction Case</h2>
-                    <span>사무실과 산업 현장 협업 시발생하는 문제</span>
-                </div> -->
+                <h2 class="blind">솔루션</h2>
                 <div class="inner">
                     <div class="main_box">
                         <div class="lf_box">
@@ -146,37 +152,81 @@
                         </div>
                         <div class="rt_box">
                             <strong>다이나믹 소통</strong>
-                            <p>실시간 영상, 이미지, PDF 등 문제 해결에 필요한
+                            <p>실시간 영상, 이미지, PDF 등 문제 해결에 필요한 <br>
                                 다양한 콘텐츠를 상황에 따라 바꿔가며
-                                협업 할 수 있으며, 포인터, 펜, 텍스트 등의 마크업을 통해 상호 작용이 가능합니다.</p>
+                                협업 할 수 있으며, <br> 포인터, 펜, 텍스트 등의 마크업을 통해 상호 작용이 가능합니다.</p>
                         </div>
                     </div>
+
                     <hr>
+
                     <div class="S_main_box">
                         <div class="lf_box">
                             <strong>화면 분할</strong>
-                            <p>소통 중 콘텐츠 전환이 번거롭다면,
-                                화면 분할 기능을 통해 문제해결에                              
-                                필요한 콘텐츠들을 한번에 확인하며                               
-                                소통할 수 있습니다.</p>
+                            <p>
+                                소통 중 콘텐츠 전환이 번거롭다면, <br>
+                                화면 분할 기능을 통해 문제해결에
+                                필요한<br>
+                                콘텐츠들을 한번에 확인하며 소통할 수 있습니다.
+                            </p>
                         </div>
                         <div class="rt_box">
                             <img src="./images/S_img02.gif" alt="">
                         </div>
                     </div>
                 </div>
-
             </section>
 
 
+            <section class="section main_bg">
+                <div class="tit">
+                    <h2>다양한 분야에서 zinnoSPACE™를 경험해보세요</h2>
+                </div>
+                <div class="inner">
+                    <ul>
+                        <li><img src="./images/Field01.jpg" alt=""></li>
+                        <li><img src="./images/Field02.jpg" alt=""></li>
+                        <li><img src="./images/Field03.jpg" alt=""></li>
+                        <li class="txt">
+                            <div class="txt_area">
+                                <strong>현장 이슈 해결</strong>
+                                <p>불필요한 인력이동을 최소화하여
+                                    시간을 단축하고 비용을 절감할 수 있습니다.</p>
+                            </div>
+                        </li>
+                        <li class="txt">
+                            <div class="txt_area">
+                                <strong>훈련 및 교육</strong>
+                                <p>현장 작업 훈련 및 교육에서
+                                    활용할 수 있습니다.</p>
+                            </div>
+                        </li>
+                        <li class="txt">
+                            <div class="txt_area">
+                                <strong>고객 지원</strong>
+                                <p>직접 방문 없이도
+                                    원격으로 실시간 대응이 가능합니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
+            <section class="section xsxs">
+                <ul class="list">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+
+                </ul>
+            </section>
 
             <section class="section">
                 <h2>푸치푸치</h2>
             </section>
-            <section class="section">
-                <h2>푸치푸치</h2>
-            </section>
+
             <footer class="section footer fp-auto-height">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, magni.
             </footer>
