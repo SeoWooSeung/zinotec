@@ -3,6 +3,7 @@ $(function () {
     scrollOverflow: false,
     anchors: ["01", "02", "03", "04", "05"],
     navigation: true,
+    responsiveWidth:1200,
     onLeave: function (index, nextIndex, direction) {
       console.log(index, nextIndex, direction);
 
@@ -44,4 +45,11 @@ $(function () {
       $(".main_visual_slide .itm").eq(currentSlide).addClass("on");
     }
   );
+
+  $(".mbtn").on("click", function () {
+    $(".m_gnb").toggleClass("on");
+    $(".h1").toggleClass("on");
+    $("header").toggleClass("active");
+    // $(".icon").toggleClass("on");
+  });
 });
